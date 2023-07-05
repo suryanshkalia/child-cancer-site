@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import imgWide from "./../images/cancer-gov-hero-widescreen-202301.jpg";
 import cancerSideEffects from "./../images/1000_F_316738552_vU8mlm1Ag97kKuwy9G2ax1Hrhw5kaM1M.jpg";
+import Cancer from "./../images/download.png";
 
 const Card = ({ imageSrc, title, description, link }) => {
   return (
@@ -43,17 +44,13 @@ const Home = () => {
     <React.Fragment>
       <main className="flex flex-col gap-10">
         <section className="container flex justify-center mx-auto">
-          <img
-            src={imgWide}
-            alt="cancer-gov-hero"
-            className="shadow-2xl m-4"
-          />
+          <img src={imgWide} alt="cancer-gov-hero" className="shadow-2xl m-4" />
         </section>
         <section className="container gap-24 mx-auto flex justify-between">
           <Card
-            link={"/typesofcancer"}
-            imageSrc={cancerSideEffects}
-            title="Types of cancer"
+            link={"/cancer"}
+            imageSrc={Cancer}
+            title="What is cancer"
             description="This is the description"
           />
           <Card
