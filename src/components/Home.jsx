@@ -5,10 +5,10 @@ import imgWide from "./../images/cancer-gov-hero-widescreen-202301.jpg";
 import cancerSideEffects from "./../images/1000_F_316738552_vU8mlm1Ag97kKuwy9G2ax1Hrhw5kaM1M.jpg";
 import cancerTreatmentEffects from "./../images/xNausea_CWCrop.jpg.resize.jpg.pagespeed.ic.nBLKh-n7kV.jpg";
 
-const Card = ({ imageSrc, title, description }) => {
+const Card = ({ imageSrc, title, description, src }) => {
   return (
-    <div className="card flex flex-1 flex-co1">
-      <Link to="">
+    <div className="card flex flex-1  shadow-xl p-4 mb-4">
+      <Link to={src}>
         <img src={imageSrc} alt="Card" className="h-60 w-auto" />
         <h3>{title}</h3>
         <p>{description}</p>
@@ -19,12 +19,12 @@ const Card = ({ imageSrc, title, description }) => {
 
 const Links = ({ links, title, src }) => {
   return (
-    <div className="card flex flex-1 flex-col ">
+    <div className="card-container flex flex-1 flex-col shadow-xl p-4 mb-4 ">
       <h3 className="mb-5">{title}</h3>
       <ul>
         {links.map((link, index) => (
           <li key={index}>
-            <Link to="{src[index]}">{link}</Link>
+            <Link to={src[index]}>{link}</Link>
           </li>
         ))}
       </ul>
@@ -44,7 +44,7 @@ const Home = () => {
     <React.Fragment>
       <main className="flex flex-col gap-10 ">
         <section className="container mx-auto">
-          <img src={imgWide} alt="cancer-gov-hero" />
+          <img src={imgWide} alt="cancer-gov-hero" className="w-full" />
         </section>
         <section className="container mx-auto flex justify-between">
           <Card
@@ -70,5 +70,7 @@ const Home = () => {
     </React.Fragment>
   );
 };
+
+
 
 export default Home;
