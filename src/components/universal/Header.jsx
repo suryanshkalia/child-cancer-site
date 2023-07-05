@@ -1,12 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "./../../images/download.png"
 
 const Header = () => {
   return (
     <React.Fragment>
       <div>
         <header className="bg-gray-900 p-4 text-white flex justify-between ">
-          <div>logo</div>
+          <div>
+            <Link to="/">
+            <img src={logo} alt="cancerLogo" className="h-auto w-16" ></img>
+            </Link>
+          </div>
           <div>
             <ul className="flex justify-between gap-5">
               <li>
@@ -16,7 +21,7 @@ const Header = () => {
                 <Link to="about">About</Link>
               </li>
               <li>
-                <Link to="services">Services</Link>
+                <Link to="services" >Services</Link>
               </li>
               <li>
                 <Link to="contacts">Contacts</Link>
