@@ -25,6 +25,10 @@ const Header = () => {
       title: "Child Cancer Awareness",
       to: "/childawareness",
     },
+    {
+      title: "Cancer Treatment",
+      to: "/treatment"
+    }
   ];
 
   const Contact = [
