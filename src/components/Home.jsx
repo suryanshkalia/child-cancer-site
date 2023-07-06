@@ -11,8 +11,7 @@ const Card = ({ imageSrc, title, description, link }) => {
     <div className="container text-center w-auto bg-gray-300 shadow-2xl p-4 mb-4">
       <Link to={link}>
         <img src={imageSrc} alt="Card" className="h-80 w-auto" />
-        <h3>{title}</h3>
-        <p>{description}</p>
+        <h3 className="text-xl" >{title}</h3>
       </Link>
     </div>
   );
@@ -31,18 +30,16 @@ const Home = () => {
             link={"/cancer"}
             imageSrc={Cancer}
             title="What is cancer"
-            description="This is the description"
           />
           <Card
           link={"/treatment"}
             imageSrc={treatment}
             title="Cancer Treatment"
-            description="This is the description"
           />
           <Card
+          link={"/awareness"}
             imageSrc={cancerSideEffects}
-            title="Side effects of cancer"
-            description="This is the description"
+            title="Childhood Cancer Awareness"
           />
         </section>
       </main>
