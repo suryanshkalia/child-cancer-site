@@ -1,20 +1,45 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "./../../images/download.png";
+import logo from "./../../images/download.jpg"
+
 
 const Header = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [showAboutDropdown, setShowAboutDropdown] = useState(false);
 
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
+  const toggleAboutDropdown = () => {
+    setShowAboutDropdown(!showAboutDropdown);
   };
 
-  const About = ["Our profile", "Contact Information"];
+  const [showContactDropdown, setShowContactDropdown] = useState(false);
+
+  const toggleContactDropdown = () => {
+    setShowContactDropdown(!showContactDropdown);
+  };
+
+  const About = [
+    {
+      title: "What is cancer",
+      to: "/cancer",
+    },
+    {
+      title: "Child Cancer Awareness",
+      to: "/childawareness",
+    },
+  ];
+
+  const Contact = [
+    {
+      title: "Phone-Number - 1234567890",
+    },
+    {
+      title: "Email - abcd@gmail.com",
+    },
+  ];
 
   return (
     <header className="bg-white shadow-2xl">
       <div className="container mx-auto py-4 flex justify-between items-center">
-        <Link to="/">
+        <Link to={"/"}>
           <img src={logo} alt="Cancer Logo" className="h-auto w-16" />
         </Link>
         <nav>
@@ -30,22 +55,22 @@ const Header = () => {
             <li>
               <div className="relative">
                 <button
-                  onClick={toggleDropdown}
+                  onClick={toggleAboutDropdown}
                   className="font-medium text-black-700 hover:text-red-600"
-                  aria-expanded={showDropdown}
+                  aria-expanded={showAboutDropdown}
                   aria-haspopup="true"
                 >
                   About
                 </button>
-                {showDropdown && (
+                {showAboutDropdown && (
                   <ul className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-md">
                     {About.map((link, index) => (
                       <li key={index}>
                         <Link
-                          to=""
+                          to={link.to}
                           className="block py-2 px-4 text-gray-700 hover:bg-gray-100"
                         >
-                          {link}
+                          {link.title}
                         </Link>
                       </li>
                     ))}
@@ -62,12 +87,21 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to="/contacts"
-                className="font-medium text-black-700 hover:text-red-600"
+              <button
+                onClick={toggleContactDropdown}
+                className="font-bold "
+                aria-expanded={showAboutDropdown}
+                aria-haspopup="true"
               >
-                Contacts
-              </Link>
+                Contact
+              </button>
+              {showContactDropdown && (
+                <ul className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-md">
+                  {Contact.map((item, index) => (
+                    <li className="block py-2 px-4 text-gray-700 hover:bg-gray-100" key={index}>{item.title}</li>
+                  ))}
+                </ul>
+              )}
             </li>
           </ul>
         </nav>
