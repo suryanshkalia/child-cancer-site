@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import cancer from "./../images/dna-genomic-sequence-article.jpg";
 import chrometography from "./../images/chrometography.jpg";
@@ -7,6 +8,7 @@ import hypothermia from "./../images/hypothermia.jpg";
 import immunotherpay from "./../images/lauren-wood-immunotherapy-thumb.jpg";
 import stemcelltransplant from "./../images/stem-cell-transplant.jpg";
 import surgery from "./../images/surgery.jpg";
+import sideEffects from "./../images/1000_F_316738552_vU8mlm1Ag97kKuwy9G2ax1Hrhw5kaM1M.jpg";
 
 const Treatment = () => {
   const typesTreatment = [
@@ -78,14 +80,20 @@ const Treatment = () => {
         </section>
         <section className="flex flex-wrap justify-center gap-8 p-10">
           {typesTreatment.map((item, index) => (
-            <div className="w-1/2 max-w-md flex flex-col p-5 shadow-2xl" >
+            <div className="w-1/2 max-w-md flex flex-col gap-5 p-5 shadow-2xl" >
               <h3 key={index} className="text-4xl " >{item.title}</h3>
               <div >
               <img src={item.image} alt="type of cancer treatment"/>
-              <p  >{item.description}</p>
+              <p className="mt-5" >{item.description}</p>
               </div>
             </div>
           ))}
+        </section>
+        <section className="max-w-md  mx-auto border border-gray-950 p-10"  >
+          <h1 className="text-4xl">Side Effects of cancer Treatment</h1>
+          <Link to="/sideEffects">
+          <img src={sideEffects} alt="Side effects of cancer treatment"/>
+          </Link>
         </section>
       </main>
     </React.Fragment>
