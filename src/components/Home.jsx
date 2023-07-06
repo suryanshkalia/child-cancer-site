@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import imgWide from "./../images/cancer-gov-hero-widescreen-202301.jpg";
 import cancerSideEffects from "./../images/1000_F_316738552_vU8mlm1Ag97kKuwy9G2ax1Hrhw5kaM1M.jpg";
 import Cancer from "./../images/download.png";
+import treatment from "./../images/images.jpeg"
 
 const Card = ({ imageSrc, title, description, link }) => {
   return (
@@ -17,28 +18,7 @@ const Card = ({ imageSrc, title, description, link }) => {
   );
 };
 
-const Links = ({ links, title, src }) => {
-  return (
-    <div className="card-container flex flex-col shadow-xl p-4 mb-4">
-      <h3 className="mb-5">{title}</h3>
-      <ul>
-        {links.map((link, index) => (
-          <li key={index}>
-            <Link to={src[index]}>{link}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
 const Home = () => {
-  const links = [
-    "What is cancer",
-    "Causes & prevention",
-    "Diagnoses & staging",
-  ];
-  const src = ["/what-is-cancer", "/causes-prevention", "/diagnoses-staging"];
 
   return (
     <React.Fragment>
@@ -54,8 +34,9 @@ const Home = () => {
             description="This is the description"
           />
           <Card
-            imageSrc={cancerSideEffects}
-            title="Side Effects of Cancer Treatment"
+          link={"/treatment"}
+            imageSrc={treatment}
+            title="Cancer Treatment"
             description="This is the description"
           />
           <Card
@@ -63,9 +44,6 @@ const Home = () => {
             title="Side effects of cancer"
             description="This is the description"
           />
-        </section>
-        <section className="container mx-auto flex justify-between">
-          <Links title="About Cancer" links={links} src={src} />
         </section>
       </main>
     </React.Fragment>
