@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import topLogo from "./../../images/4196777.png";
-import cancerLogo from "./../../images/download.png";
+import cancerLogo from "./../../images/download.jpg";
 
 const Links = ({ links, src }) => {
   return (
@@ -21,7 +21,7 @@ const Links = ({ links, src }) => {
 const Footer = () => {
   const links = ["Home", "donate", "volunteer"];
 
-  const src = ["/home", "suryanshKalia", "kaliaSuryansh"];
+  const src = ["/", "suryanshKalia", "kaliaSuryansh"];
   return (
     <footer className="bg-gray-900  text-white">
       <div className="container mx-auto py-8">
