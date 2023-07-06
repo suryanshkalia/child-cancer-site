@@ -60,7 +60,7 @@ const Header = () => {
                   aria-expanded={showAboutDropdown}
                   aria-haspopup="true"
                 >
-                  About
+                  Info
                 </button>
                 {showAboutDropdown && (
                   <ul className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-md">
